@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Svg from './Svg';
-import InnerSvg from './InnerSvg';
 
 const Container = styled.svg`
+  height: ${({height}) => height}px;
+  width: ${({width}) => width};
 `;
 
 Container.Svg = Svg;
-Container.InnerSvg = InnerSvg;
 
 export default Container;
