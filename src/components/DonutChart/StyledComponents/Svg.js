@@ -10,32 +10,51 @@ export default styled.svg`
 
   .donutchart-track{
     fill: transparent;
-    stroke: #DAE2E5;
+    stroke: #E6E5E5;
     stroke-width: 26;
   }
 
   .donutchart-indicator {
     fill: transparent;
-    stroke: #009688;
+    stroke: #48D2A0;
     stroke-width: 26;
     stroke-dasharray: 0 10000;
     transition: stroke-dasharray .3s ease;
   }
 
-  .donutchart-indicator-2 {
-    fill: transparent;
-    stroke: #d4c44e;
-    stroke-width: 26;
-    stroke-dasharray: 0 10000;
-    transition: stroke-dasharray .3s ease;
+  .rounded {
+    stroke-linecap: round;
   }
 
-  .donutchart-text{
+  .white {
+    stroke: #FFFFFF;
+  }
+
+  .yellow {
+    stroke: #D4C44E;
+  }
+
+  .blue {
+    stroke: #5098BC;
+  }
+
+  .donutchart-text {
     fill: #607580;
-    font-family: 'Roboto';
+  }
+
+  .donutchart-text-val {
+    fill: #48D2A0;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .donutchart-text-label {
+    fill: #000000;
+    font-size: 14px;
+    font-weight: bold;
   }
 
   .inner {
-    transform-origin: 0 -9px;
+    transform-origin: 0 -19px;
   }
 `;
