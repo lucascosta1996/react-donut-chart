@@ -34,4 +34,8 @@ export default styled.svg`
     fill: #607580;
     font-family: 'Roboto';
   }
+
+  .inner {
+    transform-origin: 0 -9px;
+  }
 `;

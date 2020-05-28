@@ -4,6 +4,7 @@ import Container from './StyledComponents';
 
 function DonutChart({value, size, strokewidth}) {
   const halfsize = (size * 0.5);
+  const halfsize2 = (size * 0.5);
   const radius = halfsize - (strokewidth * 0.5);
   const circumference = 2 * Math.PI * radius;
   const strokeval = ((value * circumference) / 100);
@@ -17,10 +18,16 @@ function DonutChart({value, size, strokewidth}) {
   const rotateval = 'rotate(-90 '+halfsize+','+halfsize+')';
 
   return (
-    <Container width={size} height={size}>
-      <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={trackstyle} className="donutchart-track"/>
-      <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={indicator2style} className="donutchart-indicator-2"/>
-      <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={indicatorstyle} className="donutchart-indicator"/>
+    <Container>
+      <Container.Svg width={size} height={size}>
+        <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={trackstyle} className="donutchart-track"/>
+        <circle r={radius} cx={halfsize} cy={halfsize} transform={rotateval} style={indicatorstyle} className="donutchart-indicator"/>
+      </Container.Svg>
+      <Container.Svg width={size} height={size}>
+        <circle r={radius - 9} cx={halfsize - 9} cy={halfsize - 9} transform={rotateval} style={trackstyle} className="donutchart-track inner"/>
+        <circle r={radius - 9} cx={halfsize - 9} cy={halfsize - 9} transform={rotateval} style={indicator2style} className="donutchart-indicator-2 inner"/>
+        <circle r={radius - 9} cx={halfsize - 9} cy={halfsize - 9} transform={rotateval} style={indicatorstyle} className="donutchart-indicator inner"/>
+      </Container.Svg>
     </Container>
   )
 };
