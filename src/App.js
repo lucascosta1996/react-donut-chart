@@ -16,15 +16,23 @@ const AppContainer = styled.div`
   }
 
   .green {
-    border: 2px solid #48D2A0;
+    border: 2px solid #48d2a0;
   }
 
   .yellow {
-    border: 2px solid #D4C44E;
+    border: 2px solid #d4c44e;
   }
 
   .blue {
-    border: 2px solid #5098BC;
+    border: 2px solid #5098bc;
+  }
+
+  button {
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 30px;
   }
 `;
 
@@ -32,10 +40,17 @@ function App() {
   const [mainValue, setMainValue] = useState(50);
   const [innerValue1, setInnerValue1] = useState(50);
   const [innerValue2, setInnerValue2] = useState(25);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <AppContainer>
-      <DonutChart mainValue={mainValue} innerValue1={innerValue1} innerValue2={innerValue2} valueLabel={40.535} />
+      <DonutChart
+        mainValue={mainValue}
+        innerValue1={innerValue1}
+        innerValue2={innerValue2}
+        valueLabel={40.535}
+        isLoading={isLoading}
+      />
       <input
         className="green"
         type="number"
@@ -60,6 +75,9 @@ function App() {
           setInnerValue2(e.target.value);
         }}
       />
+      <button type="button" onClick={() => setIsLoading(!isLoading)}>
+        {isLoading ? 'Stop' : 'Set'} Loading
+      </button>
     </AppContainer>
   );
 }
