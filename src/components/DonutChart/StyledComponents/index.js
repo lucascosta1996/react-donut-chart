@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Svg from "./Svg";
+import Circle from "./Circle";
 
 const Container = styled.svg`
   height: ${({ height }) => height}px;
@@ -21,5 +22,6 @@ const Container = styled.svg`
 `;
 
 Container.Svg = Svg;
+Container.Circle = Circle;
 
 export default Container;
