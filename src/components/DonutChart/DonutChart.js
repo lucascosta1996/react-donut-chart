@@ -44,46 +44,51 @@ function DonutChart({
   return (
     <Container width={size} height={size} loading={isLoading}>
       <Container.Svg width={size} height={size}>
-        <circle
+      <Container.Circle
           r={radius}
           cx={halfSize}
           cy={halfSize}
           transform={rotateval}
           style={trackstyle}
+          strokeColor={"#E6E5E5"}
           className="donutchart-track"
         />
-        <circle
+        <Container.Circle
           r={radius}
           cx={halfSize}
           cy={halfSize}
           transform={rotateval}
           style={indicatorstyle}
+          strokeColor={"#48D2A0"}
           className="donutchart-indicator"
         />
       </Container.Svg>
       <Container.Svg width={size} height={size}>
-        <circle
+        <Container.Circle
           r={radius - 19}
           cx={halfSize - 19}
           cy={halfSize - 19}
           transform={rotateval}
           style={trackstyle2}
+          strokeColor={"#FFFFFF"}
           className="donutchart-track white inner"
         />
-        <circle
+        <Container.Circle
           r={radius - 19}
           cx={halfSize - 19}
           cy={halfSize - 19}
           transform={rotateval}
           style={indicator2style}
+          strokeColor={"#D4C44E"}
           className="donutchart-indicator yellow inner"
         />
-        <circle
+        <Container.Circle
           r={radius - 19}
           cx={halfSize - 19}
           cy={halfSize - 19}
           transform={rotateval}
           style={indicator3style}
+          strokeColor={"#5098BC"}
           className="donutchart-indicator blue inner"
         />
         <text
